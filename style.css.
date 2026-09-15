@@ -1,0 +1,14 @@
+body {
+font-family: sans-serif;
+text-align: center;
+padding-top: 80px;
+transition: background-color 0.3s;
+}
+h1 {
+color: #0e8f7d;
+}
+button {
+padding: 10px 20px;
+font-size: 16px;
+cursor: pointer;
+}
