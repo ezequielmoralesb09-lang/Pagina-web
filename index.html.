@@ -1,15 +1,475 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mi primer sitio</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ciencia y Tecnología</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            background: #111827;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+
+            background: linear-gradient(
+                135deg,
+                #0f172a,
+                #1d4ed8
+            );
+
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 21px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .boton {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 13px 25px;
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            background: #2563eb;
+            transform: scale(1.05);
+        }
+
+        /* SECCIONES */
+
+        section {
+            padding: 70px 10%;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 40px;
+            color: #1e3a8a;
+        }
+
+        .contenedor {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* TARJETAS */
+
+        .tarjetas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .tarjeta {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-5px);
+        }
+
+        .tarjeta h3 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        /* ITALIANO */
+
+        .italiano {
+            background: #e0f2fe;
+        }
+
+        .italiano h2 {
+            color: #075985;
+        }
+
+        .italiano-box {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            max-width: 900px;
+            margin: auto;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        /* IA */
+
+        .ia {
+            background: #fef3c7;
+        }
+
+        .ia h2 {
+            color: #92400e;
+        }
+
+        .ia-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .ia-box ul {
+            margin-left: 25px;
+            margin-top: 15px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 50px 20px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-<h1>¡Hola, mundo!</h1>
-<p>Este es mi primer sitio publicado con GitHub Pages.</p>
-<button onclick="cambiarColor()">Cambiar color</button>
-<script src="script.js"></script>
+
+    <!-- MENÚ -->
+
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#tema">Tema</a></li>
+            <li><a href="#tecnologia">Tecnología</a></li>
+            <li><a href="#italiano">Italiano</a></li>
+            <li><a href="#ia">Uso de IA</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- INICIO -->
+
+    <header class="hero" id="inicio">
+        <div>
+            <h1>Ciencia y Tecnología</h1>
+
+            <p>
+                Un espacio educativo para conocer cómo la ciencia,
+                la tecnología y la innovación transforman nuestra sociedad.
+            </p>
+
+            <a href="#tema" class="boton">
+                Explorar el sitio
+            </a>
+        </div>
+    </header>
+
+
+    <!-- TEMA -->
+
+    <section id="tema">
+        <div class="contenedor">
+
+            <h2>¿Qué es la Ciencia y la Tecnología?</h2>
+
+            <p style="text-align:center; max-width:800px; margin:auto;">
+                La ciencia busca comprender y explicar los fenómenos
+                del mundo mediante la observación, la investigación
+                y la experimentación. La tecnología utiliza conocimientos
+                científicos para desarrollar herramientas, soluciones
+                y sistemas que permiten resolver problemas humanos.
+            </p>
+
+            <br><br>
+
+            <div class="tarjetas">
+
+                <div class="tarjeta">
+                    <h3>🔬 Ciencia</h3>
+                    <p>
+                        Se basa en la investigación y el método científico
+                        para comprender nuestro entorno y generar nuevos
+                        conocimientos.
+                    </p>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>💻 Tecnología</h3>
+                    <p>
+                        Permite aplicar conocimientos para crear herramientas,
+                        dispositivos y soluciones destinadas a diferentes
+                        necesidades.
+                    </p>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>🚀 Innovación</h3>
+                    <p>
+                        Consiste en transformar ideas y conocimientos en
+                        productos, servicios o procesos que aporten valor
+                        a la sociedad.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- TECNOLOGÍA -->
+
+    <section id="tecnologia" style="background:#ffffff;">
+
+        <div class="contenedor">
+
+            <h2>Tecnologías actuales</h2>
+
+            <div class="tarjetas">
+
+                <div class="tarjeta">
+                    <h3>🤖 Inteligencia Artificial</h3>
+
+                    <p>
+                        La inteligencia artificial permite desarrollar
+                        sistemas capaces de realizar tareas que normalmente
+                        requieren capacidades humanas, como analizar
+                        información, reconocer patrones o generar contenido.
+                    </p>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>🌐 Internet</h3>
+
+                    <p>
+                        El desarrollo de Internet transformó la comunicación,
+                        el acceso a la información, la educación y la forma
+                        en que las personas trabajan y colaboran.
+                    </p>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>🧬 Biotecnología</h3>
+
+                    <p>
+                        La biotecnología utiliza organismos o procesos
+                        biológicos para desarrollar aplicaciones en áreas
+                        como la medicina, la agricultura y la industria.
+                    </p>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>🌱 Tecnología sostenible</h3>
+
+                    <p>
+                        Busca desarrollar soluciones que reduzcan el impacto
+                        ambiental y permitan utilizar los recursos naturales
+                        de manera más eficiente.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SECCIÓN EN ITALIANO -->
+
+    <section id="italiano" class="italiano">
+
+        <div class="contenedor">
+
+            <h2>Sezione in Italiano</h2>
+
+            <div class="italiano-box">
+
+                <h3>Scienza e Tecnologia</h3>
+
+                <br>
+
+                <p>
+                    La scienza ci permette di comprendere il mondo
+                    attraverso l'osservazione, la ricerca e la
+                    sperimentazione.
+                </p>
+
+                <br>
+
+                <p>
+                    La tecnologia utilizza le conoscenze scientifiche
+                    per creare strumenti e soluzioni utili nella vita
+                    quotidiana.
+                </p>
+
+                <br>
+
+                <p>
+                    Oggi l'intelligenza artificiale, Internet e le
+                    biotecnologie stanno trasformando la società e
+                    creando nuove opportunità per il futuro.
+                </p>
+
+                <br>
+
+                <p>
+                    È importante utilizzare la tecnologia in modo
+                    responsabile, considerando sia i suoi vantaggi
+                    sia le possibili conseguenze.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DECLARACIÓN DE IA -->
+
+    <section id="ia" class="ia">
+
+        <div class="contenedor">
+
+            <h2>Declaración de Uso de Inteligencia Artificial</h2>
+
+            <div class="ia-box">
+
+                <p>
+                    Para la realización de este proyecto se utilizaron
+                    herramientas de Inteligencia Artificial como apoyo
+                    durante el proceso de desarrollo.
+                </p>
+
+                <br>
+
+                <p>
+                    La IA fue utilizada principalmente para:
+                </p>
+
+                <ul>
+                    <li>Generar una estructura inicial de código HTML.</li>
+                    <li>Proponer estilos CSS y diseño visual.</li>
+                    <li>Organizar el contenido de las diferentes secciones.</li>
+                    <li>Revisar y corregir algunos aspectos del código.</li>
+                    <li>Proponer ideas para mejorar la presentación del sitio.</li>
+                </ul>
+
+                <br>
+
+                <p>
+                    El contenido final fue revisado y adaptado por los
+                    estudiantes responsables del proyecto.
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>Herramienta utilizada:</strong>
+                    ChatGPT.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p><strong>Proyecto de Desarrollo Web</strong></p>
+
+        <p>Educación Media Superior</p>
+
+        <p>2026</p>
+
+    </footer>
+
 </body>
 </html>
