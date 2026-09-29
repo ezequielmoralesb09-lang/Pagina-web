@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ciencia y Tecnología</title>
+    <title>GTA VI | Vice City</title>
+
+    <meta name="description"
+          content="Página educativa sobre Grand Theft Auto VI realizada con ayuda de Inteligencia Artificial por estudiantes de la Scuola Italiana.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
 
     <style>
+
+        :root {
+            --pink: #ff3cac;
+            --purple: #784ba0;
+            --blue: #2b86c5;
+            --dark: #07070c;
+            --dark2: #101019;
+            --card: rgba(255,255,255,0.07);
+            --text: #f5f5f7;
+            --muted: #aaaaba;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -18,458 +39,1118 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: "Inter", sans-serif;
+            background: var(--dark);
+            color: var(--text);
             line-height: 1.6;
-            background: #f4f7fb;
-            color: #1f2937;
         }
 
-        /* NAVBAR */
+        /* =========================
+           NAVBAR
+        ========================= */
 
         nav {
-            background: #111827;
-            padding: 15px 30px;
-            position: sticky;
+            position: fixed;
             top: 0;
+            width: 100%;
             z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 7%;
+
+            background: rgba(7,7,12,0.80);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--pink);
         }
 
         nav ul {
-            list-style: none;
             display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
+            gap: 25px;
+            list-style: none;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            color: #60a5fa;
+            color: var(--pink);
         }
 
-        /* HERO */
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
-            min-height: 500px;
+            min-height: 100vh;
+
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+
             text-align: center;
-            padding: 40px 20px;
 
-            background: linear-gradient(
-                135deg,
-                #0f172a,
-                #1d4ed8
-            );
+            padding: 120px 20px 80px;
 
-            color: white;
+            background:
+                linear-gradient(
+                    rgba(7,7,12,0.35),
+                    rgba(7,7,12,0.95)
+                ),
+                url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2000&q=85");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .tag {
+            display: inline-block;
+
+            padding: 8px 15px;
+            margin-bottom: 25px;
+
+            border-radius: 30px;
+
+            background: rgba(255,60,172,0.12);
+            border: 1px solid rgba(255,60,172,0.4);
+
+            color: #ff77c6;
+
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
         .hero h1 {
-            font-size: 55px;
-            margin-bottom: 15px;
+            font-size: clamp(60px, 12vw, 150px);
+            line-height: 0.85;
+            font-weight: 900;
+
+            letter-spacing: -7px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff3cac,
+                    #784ba0,
+                    #2b86c5
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+
+            margin-bottom: 35px;
         }
 
         .hero p {
-            font-size: 21px;
-            max-width: 700px;
+            max-width: 750px;
             margin: auto;
+
+            font-size: 18px;
+            color: #d1d1dc;
         }
 
-        .boton {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 13px 25px;
-            background: #3b82f6;
-            color: white;
+        .buttons {
+            margin-top: 35px;
+
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 25px;
+
+            border-radius: 30px;
+
             text-decoration: none;
-            border-radius: 8px;
+            color: white;
+
+            font-weight: 700;
+
             transition: 0.3s;
         }
 
-        .boton:hover {
-            background: #2563eb;
-            transform: scale(1.05);
+        .primary {
+            background: linear-gradient(
+                90deg,
+                var(--pink),
+                var(--purple)
+            );
         }
 
-        /* SECCIONES */
+        .secondary {
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.06);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255,60,172,0.25);
+        }
+
+        /* =========================
+           SECCIONES
+        ========================= */
 
         section {
-            padding: 70px 10%;
+            padding: 100px 7%;
         }
 
-        section h2 {
+        .section-title {
             text-align: center;
-            font-size: 35px;
-            margin-bottom: 40px;
-            color: #1e3a8a;
+            margin-bottom: 60px;
         }
 
-        .contenedor {
+        .section-title h2 {
+            font-size: clamp(35px, 5vw, 60px);
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: var(--muted);
+        }
+
+        /* =========================
+           INFORMACION
+        ========================= */
+
+        .info-grid {
             max-width: 1100px;
             margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
 
-        /* TARJETAS */
+        .info-card {
+            padding: 30px;
 
-        .tarjetas {
+            border-radius: 20px;
+
+            background: var(--card);
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            transition: 0.3s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(255,60,172,0.4);
+        }
+
+        .info-card h3 {
+            color: var(--pink);
+            margin-bottom: 10px;
+        }
+
+        .info-card p {
+            color: var(--muted);
+        }
+
+        /* =========================
+           PERSONAJES
+        ========================= */
+
+        .characters {
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(120,75,160,0.18),
+                    transparent 60%
+                );
+        }
+
+        .character-grid {
+            max-width: 1100px;
+            margin: auto;
+
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(2,1fr);
             gap: 25px;
         }
 
-        .tarjeta {
-            background: white;
+        .character {
+            min-height: 500px;
+
+            display: flex;
+            align-items: end;
+
             padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: 0.3s;
+
+            border-radius: 25px;
+
+            overflow: hidden;
+
+            background-size: cover;
+            background-position: center;
+
+            position: relative;
         }
 
-        .tarjeta:hover {
-            transform: translateY(-5px);
+        .character::before {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    transparent 30%,
+                    rgba(0,0,0,0.95)
+                );
         }
 
-        .tarjeta h3 {
-            color: #2563eb;
+        .jason {
+            background-image:
+                url("https://images.unsplash.com/photo-1520975958225-8d9f8a4b7c3d?auto=format&fit=crop&w=1200&q=85");
+        }
+
+        .lucia {
+            background-image:
+                url("https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=1200&q=85");
+        }
+
+        .character-info {
+            position: relative;
+            z-index: 2;
+        }
+
+        .character h3 {
+            font-size: 35px;
+        }
+
+        .character p {
+            color: #ccc;
+        }
+
+        /* =========================
+           MUNDO
+        ========================= */
+
+        .world {
+            background: #0b0b13;
+        }
+
+        .world-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+
+            align-items: center;
+        }
+
+        .world-image {
+            height: 450px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    rgba(255,60,172,0.08),
+                    rgba(0,0,0,0.45)
+                ),
+                url("https://images.unsplash.com/photo-1514214246283-d427a95c5d2f?auto=format&fit=crop&w=1400&q=85");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .world-text h2 {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .world-text p {
+            color: var(--muted);
             margin-bottom: 15px;
         }
 
-        /* ITALIANO */
+        .locations {
+            margin-top: 25px;
 
-        .italiano {
-            background: #e0f2fe;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 10px;
         }
 
-        .italiano h2 {
-            color: #075985;
-        }
+        .location {
+            padding: 15px;
 
-        .italiano-box {
-            background: white;
-            padding: 35px;
             border-radius: 12px;
-            max-width: 900px;
+
+            background: rgba(255,255,255,0.05);
+
+            font-weight: 600;
+        }
+
+        /* =========================
+           HACKEOS
+        ========================= */
+
+        .hack-section {
+            background:
+                linear-gradient(
+                    180deg,
+                    #07070c,
+                    #100815
+                );
+        }
+
+        .warning {
+            max-width: 1000px;
+            margin: 0 auto 35px;
+
+            padding: 20px;
+
+            border-left: 4px solid #ffb000;
+
+            background: rgba(255,176,0,0.08);
+
+            color: #ddd;
+        }
+
+        .hack-grid {
+            max-width: 1100px;
             margin: auto;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+
+            display: grid;
+            gap: 20px;
         }
 
-        /* IA */
-
-        .ia {
-            background: #fef3c7;
-        }
-
-        .ia h2 {
-            color: #92400e;
-        }
-
-        .ia-box {
-            background: white;
+        .hack {
             padding: 30px;
-            border-radius: 12px;
-            max-width: 900px;
-            margin: auto;
+
+            background: rgba(255,255,255,0.05);
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            border-radius: 18px;
         }
 
-        .ia-box ul {
-            margin-left: 25px;
-            margin-top: 15px;
+        .hack h3 {
+            color: #ff6f91;
+            margin-bottom: 10px;
         }
 
-        /* FOOTER */
+        .hack .date {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .hack p {
+            color: #c4c4cf;
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           LANZAMIENTO
+        ========================= */
+
+        .release {
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,60,172,0.15),
+                    rgba(43,134,197,0.12)
+                );
+        }
+
+        .release-date {
+            font-size: clamp(45px,8vw,90px);
+
+            font-weight: 900;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--pink),
+                    #65d4ff
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+
+            margin: 25px 0;
+        }
+
+        /* =========================
+           CREDITOS
+        ========================= */
+
+        .credits {
+            padding: 80px 20px;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(255,60,172,0.15),
+                    transparent 60%
+                );
+
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .credits h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .credits .ai {
+            color: var(--pink);
+            font-weight: 800;
+        }
+
+        .students {
+            margin: 25px auto;
+
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .student {
+            padding: 15px 25px;
+
+            border-radius: 50px;
+
+            background: rgba(255,255,255,0.06);
+
+            border: 1px solid rgba(255,60,172,0.25);
+
+            font-weight: 700;
+        }
+
+        .school {
+            color: #bbb;
+            margin-top: 10px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
-            background: #111827;
-            color: white;
+            padding: 40px 7%;
+
             text-align: center;
-            padding: 30px 20px;
+
+            background: #050509;
+
+            color: #777;
+
+            border-top: 1px solid rgba(255,255,255,0.08);
         }
 
         footer p {
-            margin: 5px;
+            margin: 7px 0;
         }
 
-        /* RESPONSIVE */
+        footer strong {
+            color: #aaa;
+        }
 
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 38px;
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width: 800px) {
+
+            nav ul {
+                display: none;
             }
 
-            .hero p {
-                font-size: 18px;
+            .info-grid,
+            .character-grid,
+            .world-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .character {
+                min-height: 400px;
+            }
+
+            .world-image {
+                height: 300px;
             }
 
             section {
-                padding: 50px 20px;
+                padding: 75px 5%;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
             }
         }
+
     </style>
 </head>
 
+
 <body>
 
-    <!-- MENÚ -->
 
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#tema">Tema</a></li>
-            <li><a href="#tecnologia">Tecnología</a></li>
-            <li><a href="#italiano">Italiano</a></li>
-            <li><a href="#ia">Uso de IA</a></li>
-        </ul>
-    </nav>
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav>
+
+    <div class="logo">
+        GTA<span>VI</span>
+    </div>
+
+    <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#informacion">Información</a></li>
+        <li><a href="#personajes">Personajes</a></li>
+        <li><a href="#mundo">Mundo</a></li>
+        <li><a href="#hackeos">Hackeos</a></li>
+        <li><a href="#creditos">Créditos</a></li>
+    </ul>
+
+</nav>
 
 
-    <!-- INICIO -->
+<!-- =========================
+     HERO
+========================= -->
 
-    <header class="hero" id="inicio">
-        <div>
-            <h1>Ciencia y Tecnología</h1>
+<header class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <span class="tag">
+            GRAND THEFT AUTO VI
+        </span>
+
+        <h1>VICE CITY</h1>
+
+        <p>
+            Bienvenido a una nueva generación de Grand Theft Auto.
+            Descubrí Vice City, Leonida, sus protagonistas,
+            el mundo abierto y algunos de los acontecimientos
+            más importantes relacionados con el desarrollo de GTA VI.
+        </p>
+
+        <div class="buttons">
+
+            <a
+                class="btn primary"
+                href="#informacion">
+                Explorar
+            </a>
+
+            <a
+                class="btn secondary"
+                href="https://www.rockstargames.com/VI"
+                target="_blank">
+                Rockstar Games
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     INFORMACION
+========================= -->
+
+<section id="informacion">
+
+    <div class="section-title">
+
+        <h2>Grand Theft Auto VI</h2>
+
+        <p>
+            Información general sobre el próximo título de Rockstar Games.
+        </p>
+
+    </div>
+
+
+    <div class="info-grid">
+
+
+        <article class="info-card">
+
+            <h3>📅 Lanzamiento</h3>
 
             <p>
-                Un espacio educativo para conocer cómo la ciencia,
-                la tecnología y la innovación transforman nuestra sociedad.
+                Grand Theft Auto VI está anunciado para
+                el 19 de noviembre de 2026.
             </p>
 
-            <a href="#tema" class="boton">
-                Explorar el sitio
-            </a>
-        </div>
-    </header>
+        </article>
 
 
-    <!-- TEMA -->
+        <article class="info-card">
 
-    <section id="tema">
-        <div class="contenedor">
+            <h3>🎮 Plataformas</h3>
 
-            <h2>¿Qué es la Ciencia y la Tecnología?</h2>
-
-            <p style="text-align:center; max-width:800px; margin:auto;">
-                La ciencia busca comprender y explicar los fenómenos
-                del mundo mediante la observación, la investigación
-                y la experimentación. La tecnología utiliza conocimientos
-                científicos para desarrollar herramientas, soluciones
-                y sistemas que permiten resolver problemas humanos.
+            <p>
+                El lanzamiento está anunciado para
+                PlayStation 5 y Xbox Series X|S.
             </p>
 
-            <br><br>
+        </article>
 
-            <div class="tarjetas">
 
-                <div class="tarjeta">
-                    <h3>🔬 Ciencia</h3>
-                    <p>
-                        Se basa en la investigación y el método científico
-                        para comprender nuestro entorno y generar nuevos
-                        conocimientos.
-                    </p>
+        <article class="info-card">
+
+            <h3>🌴 Localización</h3>
+
+            <p>
+                La historia se desarrolla en Vice City
+                y distintas regiones del estado ficticio de Leonida.
+            </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+            <h3>👥 Protagonistas</h3>
+
+            <p>
+                La historia gira principalmente alrededor
+                de Jason Duval y Lucia Caminos.
+            </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+            <h3>🏝️ Vice City</h3>
+
+            <p>
+                Una reinterpretación moderna de la ciudad
+                inspirada en Miami que apareció anteriormente
+                en Grand Theft Auto: Vice City.
+            </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+            <h3>🌎 Mundo abierto</h3>
+
+            <p>
+                Leonida combina zonas urbanas, playas,
+                carreteras, áreas rurales y diferentes
+                paisajes naturales.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PERSONAJES
+========================= -->
+
+<section class="characters" id="personajes">
+
+    <div class="section-title">
+
+        <h2>Los protagonistas</h2>
+
+        <p>
+            Jason y Lucia son los personajes principales
+            de la historia de GTA VI.
+        </p>
+
+    </div>
+
+
+    <div class="character-grid">
+
+
+        <article class="character jason">
+
+            <div class="character-info">
+
+                <h3>Jason Duval</h3>
+
+                <p>
+                    Jason creció rodeado de delincuentes y
+                    buscó una vida más sencilla después de
+                    pasar por el ejército.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="character lucia">
+
+            <div class="character-info">
+
+                <h3>Lucia Caminos</h3>
+
+                <p>
+                    Lucia acaba de salir de prisión y está
+                    decidida a cambiar su situación y conseguir
+                    la vida que siempre quiso.
+                </p>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MUNDO
+========================= -->
+
+<section class="world" id="mundo">
+
+    <div class="world-grid">
+
+
+        <div class="world-image"></div>
+
+
+        <div class="world-text">
+
+            <h2>Bienvenido a Leonida</h2>
+
+            <p>
+                El mundo de GTA VI se extiende mucho más allá
+                de Vice City. Rockstar ha mostrado diferentes
+                regiones y ambientes del estado de Leonida.
+            </p>
+
+            <p>
+                Desde zonas urbanas llenas de neón hasta
+                carreteras, playas, islas y zonas rurales,
+                el juego presenta un mundo abierto de gran escala.
+            </p>
+
+
+            <div class="locations">
+
+                <div class="location">
+                    🌴 Vice City
                 </div>
 
-                <div class="tarjeta">
-                    <h3>💻 Tecnología</h3>
-                    <p>
-                        Permite aplicar conocimientos para crear herramientas,
-                        dispositivos y soluciones destinadas a diferentes
-                        necesidades.
-                    </p>
+                <div class="location">
+                    🏝️ Leonida Keys
                 </div>
 
-                <div class="tarjeta">
-                    <h3>🚀 Innovación</h3>
-                    <p>
-                        Consiste en transformar ideas y conocimientos en
-                        productos, servicios o procesos que aporten valor
-                        a la sociedad.
-                    </p>
+                <div class="location">
+                    🌾 Grassrivers
+                </div>
+
+                <div class="location">
+                    🏖️ Port Gellhorn
+                </div>
+
+                <div class="location">
+                    🌲 Mount Kalaga
+                </div>
+
+                <div class="location">
+                    🌅 Ambrosia
                 </div>
 
             </div>
 
         </div>
-    </section>
+
+    </div>
+
+</section>
 
 
-    <!-- TECNOLOGÍA -->
+<!-- =========================
+     HACKEOS Y FILTRACIONES
+========================= -->
 
-    <section id="tecnologia" style="background:#ffffff;">
+<section class="hack-section" id="hackeos">
 
-        <div class="contenedor">
+    <div class="section-title">
 
-            <h2>Tecnologías actuales</h2>
+        <h2>Hackeos y filtraciones</h2>
 
-            <div class="tarjetas">
+        <p>
+            Algunos de los acontecimientos relacionados con
+            la seguridad y las filtraciones durante el desarrollo.
+        </p>
 
-                <div class="tarjeta">
-                    <h3>🤖 Inteligencia Artificial</h3>
+    </div>
 
-                    <p>
-                        La inteligencia artificial permite desarrollar
-                        sistemas capaces de realizar tareas que normalmente
-                        requieren capacidades humanas, como analizar
-                        información, reconocer patrones o generar contenido.
-                    </p>
-                </div>
 
-                <div class="tarjeta">
-                    <h3>🌐 Internet</h3>
+    <div class="warning">
 
-                    <p>
-                        El desarrollo de Internet transformó la comunicación,
-                        el acceso a la información, la educación y la forma
-                        en que las personas trabajan y colaboran.
-                    </p>
-                </div>
+        <strong>⚠️ Nota educativa:</strong>
 
-                <div class="tarjeta">
-                    <h3>🧬 Biotecnología</h3>
+        Esta sección tiene fines informativos.
+        No incluye instrucciones, herramientas, exploits,
+        contraseñas ni métodos para realizar ataques informáticos.
 
-                    <p>
-                        La biotecnología utiliza organismos o procesos
-                        biológicos para desarrollar aplicaciones en áreas
-                        como la medicina, la agricultura y la industria.
-                    </p>
-                </div>
+    </div>
 
-                <div class="tarjeta">
-                    <h3>🌱 Tecnología sostenible</h3>
 
-                    <p>
-                        Busca desarrollar soluciones que reduzcan el impacto
-                        ambiental y permitan utilizar los recursos naturales
-                        de manera más eficiente.
-                    </p>
-                </div>
+    <div class="hack-grid">
 
+
+        <article class="hack">
+
+            <div class="date">
+                SEPTIEMBRE DE 2022
             </div>
 
-        </div>
+            <h3>
+                🎥 La gran filtración de GTA VI
+            </h3>
 
-    </section>
+            <p>
+                En septiembre de 2022 aparecieron en Internet
+                numerosos vídeos que mostraban material de una
+                versión temprana de Grand Theft Auto VI.
+            </p>
+
+            <p>
+                El material permitía observar diferentes elementos
+                del desarrollo que todavía no habían sido mostrados
+                oficialmente por Rockstar Games.
+            </p>
+
+        </article>
 
 
-    <!-- SECCIÓN EN ITALIANO -->
+        <article class="hack">
 
-    <section id="italiano" class="italiano">
-
-        <div class="contenedor">
-
-            <h2>Sezione in Italiano</h2>
-
-            <div class="italiano-box">
-
-                <h3>Scienza e Tecnologia</h3>
-
-                <br>
-
-                <p>
-                    La scienza ci permette di comprendere il mondo
-                    attraverso l'osservazione, la ricerca e la
-                    sperimentazione.
-                </p>
-
-                <br>
-
-                <p>
-                    La tecnologia utilizza le conoscenze scientifiche
-                    per creare strumenti e soluzioni utili nella vita
-                    quotidiana.
-                </p>
-
-                <br>
-
-                <p>
-                    Oggi l'intelligenza artificiale, Internet e le
-                    biotecnologie stanno trasformando la società e
-                    creando nuove opportunità per il futuro.
-                </p>
-
-                <br>
-
-                <p>
-                    È importante utilizzare la tecnologia in modo
-                    responsabile, considerando sia i suoi vantaggi
-                    sia le possibili conseguenze.
-                </p>
-
+            <div class="date">
+                2022
             </div>
 
-        </div>
+            <h3>
+                🔒 Exposición de material interno
+            </h3>
 
-    </section>
+            <p>
+                La filtración expuso contenido interno relacionado
+                con el desarrollo del juego. Rockstar confirmó
+                públicamente que había sufrido una intrusión y que
+                se había accedido a información de su red.
+            </p>
+
+        </article>
 
 
-    <!-- DECLARACIÓN DE IA -->
+        <article class="hack">
 
-    <section id="ia" class="ia">
-
-        <div class="contenedor">
-
-            <h2>Declaración de Uso de Inteligencia Artificial</h2>
-
-            <div class="ia-box">
-
-                <p>
-                    Para la realización de este proyecto se utilizaron
-                    herramientas de Inteligencia Artificial como apoyo
-                    durante el proceso de desarrollo.
-                </p>
-
-                <br>
-
-                <p>
-                    La IA fue utilizada principalmente para:
-                </p>
-
-                <ul>
-                    <li>Generar una estructura inicial de código HTML.</li>
-                    <li>Proponer estilos CSS y diseño visual.</li>
-                    <li>Organizar el contenido de las diferentes secciones.</li>
-                    <li>Revisar y corregir algunos aspectos del código.</li>
-                    <li>Proponer ideas para mejorar la presentación del sitio.</li>
-                </ul>
-
-                <br>
-
-                <p>
-                    El contenido final fue revisado y adaptado por los
-                    estudiantes responsables del proyecto.
-                </p>
-
-                <br>
-
-                <p>
-                    <strong>Herramienta utilizada:</strong>
-                    ChatGPT.
-                </p>
-
+            <div class="date">
+                CONSECUENCIAS
             </div>
 
+            <h3>
+                ⚠️ Impacto sobre el desarrollo
+            </h3>
+
+            <p>
+                El incidente provocó una enorme circulación de
+                material no publicado y generó preocupación sobre
+                la seguridad de los sistemas utilizados durante
+                el desarrollo del juego.
+            </p>
+
+        </article>
+
+
+        <article class="hack">
+
+            <div class="date">
+                IMPORTANTE
+            </div>
+
+            <h3>
+                🛡️ Seguridad y contenido filtrado
+            </h3>
+
+            <p>
+                Las filtraciones no deben confundirse con el
+                material promocional oficial. Para proyectos
+                educativos y páginas de fans es recomendable
+                utilizar información y material publicados
+                oficialmente.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LANZAMIENTO
+========================= -->
+
+<section class="release">
+
+    <div class="section-title">
+
+        <h2>La espera continúa...</h2>
+
+        <p>
+            Fecha de lanzamiento anunciada por Rockstar Games.
+        </p>
+
+    </div>
+
+
+    <div class="release-date">
+        19.11.2026
+    </div>
+
+
+    <p>
+        PlayStation 5 · Xbox Series X|S
+    </p>
+
+
+    <br>
+
+
+    <a
+        class="btn primary"
+        href="https://www.rockstargames.com/VI"
+        target="_blank">
+        Ver sitio oficial
+    </a>
+
+</section>
+
+
+<!-- =========================
+     CREDITOS DEL PROYECTO
+========================= -->
+
+<section class="credits" id="creditos">
+
+    <h2>
+        Créditos del proyecto
+    </h2>
+
+
+    <p>
+        Esta página fue realizada con ayuda de
+        <span class="ai">
+            Inteligencia Artificial (IA)
+        </span>.
+    </p>
+
+
+    <div class="students">
+
+        <div class="student">
+            👨‍🎓 Nicolás Krul
         </div>
 
-    </section>
+        <div class="student">
+            👨‍🎓 Ezequiel Morales
+        </div>
+
+    </div>
 
 
-    <!-- FOOTER -->
+    <p class="school">
+        🏫 Estudiantes de la Scuola Italiana
+    </p>
 
-    <footer>
 
-        <p><strong>Proyecto de Desarrollo Web</strong></p>
+    <p class="school">
+        Proyecto educativo · 2026
+    </p>
 
-        <p>Educación Media Superior</p>
+</section>
 
-        <p>2026</p>
 
-    </footer>
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        <strong>GTA VI Fan Page</strong>
+    </p>
+
+    <p>
+        Realizado con ayuda de Inteligencia Artificial (IA).
+    </p>
+
+    <p>
+        Proyecto realizado por
+        <strong>Nicolás Krul</strong> y
+        <strong>Ezequiel Morales</strong>
+        de la <strong>Scuola Italiana</strong>.
+    </p>
+
+    <p>
+        Sitio educativo no afiliado oficialmente
+        con Rockstar Games.
+    </p>
+
+    <p>
+        © 2026 Rockstar Games / Take-Two Interactive.
+    </p>
+
+</footer>
+
 
 </body>
 </html>
