@@ -1453,3 +1453,24 @@ footer strong {
         width: 100%;
     }
 }
+
+.trailer-section {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.trailer-button {
+    display: inline-block;
+    padding: 14px 25px;
+    background: #e62117;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.trailer-button:hover {
+    background: #b8140d;
+    transform: scale(1.05);
+}
