@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<nav>
+    <a href="index.html">Inicio</a>
+    <a href="leaks.html">Filtraciones</a>
+    <a href="characters.html">Personajes</a>
+</nav>
 <a href="trailers.html">Trailers</a>
 
 <script src="script.js"></script>
