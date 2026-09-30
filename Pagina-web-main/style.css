@@ -1,0 +1,666 @@
+/* =========================================
+   GTA VI FAN SITE - ESTILO GLOBAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(255, 80, 160, 0.12), transparent 30%),
+        radial-gradient(circle at 85% 80%, rgba(255, 140, 0, 0.10), transparent 30%),
+        #080808;
+    background-attachment: fixed;
+    color: white;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   ANIMACIÓN DEL FONDO
+========================================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: -50%;
+    z-index: -1;
+
+    background:
+        radial-gradient(circle, rgba(255, 105, 180, 0.08), transparent 35%),
+        radial-gradient(circle, rgba(255, 140, 0, 0.07), transparent 35%);
+
+    animation: backgroundMove 15s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundMove {
+    0% {
+        transform: translate(-5%, -5%) scale(1);
+    }
+
+    50% {
+        transform: translate(5%, 3%) scale(1.08);
+    }
+
+    100% {
+        transform: translate(-2%, 6%) scale(1);
+    }
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+    background: rgba(10, 10, 10, 0.88);
+    backdrop-filter: blur(12px);
+
+    padding: 20px 40px;
+
+    border-bottom: 2px solid #ff8c00;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    flex-wrap: wrap;
+    gap: 20px;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    animation: headerDown 0.8s ease;
+}
+
+@keyframes headerDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+header h1 {
+    color: #ff8c00;
+    font-size: 28px;
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 0 10px rgba(255, 140, 0, 0.5);
+
+    transition: 0.3s;
+}
+
+header h1:hover {
+    transform: scale(1.08);
+}
+
+
+/* =========================================
+   NAVEGACIÓN
+========================================= */
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    position: relative;
+
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+
+    padding: 5px 0;
+
+    transition: 0.3s;
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+
+    width: 0;
+    height: 2px;
+
+    background: #ff8c00;
+
+    transform: translateX(-50%);
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff8c00;
+    transform: translateY(-2px);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    position: relative;
+
+    text-align: center;
+
+    padding: 90px 20px 70px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.9)
+        ),
+        radial-gradient(
+            circle at center,
+            rgba(120, 25, 80, 0.8),
+            #080808 70%
+        );
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 100, 170, 0.12);
+
+    filter: blur(80px);
+
+    top: -200px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    animation: glowMove 8s ease-in-out infinite alternate;
+}
+
+@keyframes glowMove {
+    from {
+        transform: translateX(-50%) scale(0.9);
+    }
+
+    to {
+        transform: translateX(-50%) scale(1.2);
+    }
+}
+
+.hero h2 {
+    position: relative;
+
+    font-size: 55px;
+    letter-spacing: 5px;
+
+    color: #ff8c00;
+
+    text-shadow:
+        0 0 10px rgba(255, 140, 0, 0.5),
+        0 0 35px rgba(255, 80, 150, 0.35);
+
+    margin-bottom: 18px;
+
+    animation: titleAppear 1s ease;
+}
+
+@keyframes titleAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+.hero p {
+    position: relative;
+
+    max-width: 750px;
+
+    margin: auto;
+
+    color: #ccc;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    animation: textAppear 1.2s ease;
+}
+
+@keyframes textAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   CONTENEDORES
+========================================= */
+
+.leaks-container,
+.characters-container,
+.map-container,
+.trailers-container {
+    max-width: 1100px;
+
+    margin: 50px auto 80px;
+
+    padding: 0 20px;
+
+    animation: contentAppear 0.9s ease;
+}
+
+@keyframes contentAppear {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   TARJETAS
+========================================= */
+
+.leak-card,
+.character-card,
+.trailer,
+.map-box,
+.info-box {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(28, 28, 28, 0.96),
+            rgba(12, 12, 12, 0.96)
+        );
+
+    border: 1px solid #292929;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.65);
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.leak-card:hover,
+.character-card:hover,
+.trailer:hover,
+.map-box:hover,
+.info-box:hover {
+
+    transform: translateY(-8px);
+
+    border-color: #ff8c00;
+
+    box-shadow:
+        0 20px 60px rgba(255, 140, 0, 0.13);
+}
+
+
+/* =========================================
+   IMÁGENES
+========================================= */
+
+.leak-card img,
+.character-card img,
+.trailer img,
+.map-box img {
+
+    display: block;
+
+    width: 100%;
+
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
+}
+
+.leak-card:hover img,
+.character-card:hover img,
+.trailer:hover img,
+.map-box:hover img {
+
+    transform: scale(1.025);
+
+    filter: brightness(1.08);
+}
+
+
+/* =========================================
+   INFORMACIÓN
+========================================= */
+
+.leak-info,
+.character-info,
+.trailer-info {
+    padding: 30px;
+}
+
+.leak-info h3,
+.character-info h3,
+.trailer-info h3 {
+
+    color: #ff8c00;
+
+    font-size: 30px;
+
+    margin-bottom: 12px;
+
+    text-shadow:
+        0 0 10px rgba(255, 140, 0, 0.2);
+}
+
+.leak-info p,
+.character-info p,
+.trailer-info p {
+
+    color: #ccc;
+
+    line-height: 1.7;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.leak-button,
+.youtube-button,
+.map-button {
+
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    background: #ff8c00;
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 8px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.leak-button::before,
+.youtube-button::before,
+.map-button::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    transform: skewX(-20deg);
+
+    transition: 0.5s;
+}
+
+.leak-button:hover::before,
+.youtube-button:hover::before,
+.map-button:hover::before {
+
+    left: 120%;
+}
+
+.leak-button:hover,
+.youtube-button:hover,
+.map-button:hover {
+
+    background: #ffad33;
+
+    transform: translateY(-3px) scale(1.04);
+
+    box-shadow:
+        0 8px 25px rgba(255, 140, 0, 0.3);
+}
+
+
+/* =========================================
+   BOTONES DE YOUTUBE
+========================================= */
+
+.youtube-button {
+    background: #ff0000;
+    color: white;
+}
+
+.youtube-button:hover {
+    background: #cc0000;
+
+    box-shadow:
+        0 8px 25px rgba(255, 0, 0, 0.3);
+}
+
+
+/* =========================================
+   MAPA
+========================================= */
+
+.map-box {
+    padding: 12px;
+}
+
+.map-caption {
+    text-align: center;
+
+    color: #999;
+
+    padding: 15px;
+}
+
+
+/* =========================================
+   ETIQUETAS
+========================================= */
+
+.confirmed {
+
+    display: inline-block;
+
+    margin-top: 10px;
+
+    padding: 7px 13px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 140, 0, 0.1);
+
+    border: 1px solid #ff8c00;
+
+    color: #ff8c00;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   WARNING
+========================================= */
+
+.warning {
+
+    margin-top: 25px;
+
+    padding: 18px;
+
+    border-left: 3px solid #ff8c00;
+
+    background: rgba(255, 140, 0, 0.04);
+
+    color: #999;
+
+    line-height: 1.5;
+
+    border-radius: 0 8px 8px 0;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 30px;
+
+    background: #0d0d0d;
+
+    color: #666;
+
+    border-top: 1px solid #222;
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #080808;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff8c00;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffad33;
+}
+
+
+/* =========================================
+   SELECCIÓN DE TEXTO
+========================================= */
+
+::selection {
+    background: #ff8c00;
+    color: #080808;
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 700px) {
+
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 70px 20px 55px;
+    }
+
+    .hero h2 {
+        font-size: 37px;
+        letter-spacing: 3px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .leaks-container,
+    .characters-container,
+    .map-container,
+    .trailers-container {
+        padding: 0 10px;
+    }
+
+    .leak-info,
+    .character-info,
+    .trailer-info {
+        padding: 22px;
+    }
+}
